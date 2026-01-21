@@ -4,182 +4,139 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kiran Ramgade | Mobile Application Developer</title>
-  <meta name="description" content="Portfolio of Kiran Ramgade - Mobile Application Developer (Android/Flutter), Kotlin, Jetpack Compose, MVVM, OTT Streaming, Firebase, CI/CD." />
+  <meta name="description" content="Kiran Ramgade - Mobile Application Developer (Android/Flutter), Kotlin, Jetpack Compose, MVVM, OTT Streaming, Firebase." />
 
   <style>
     :root{
-      --bg:#0b1220;
-      --card:#101a2f;
-      --text:#eaf0ff;
-      --muted:#b7c3e6;
-      --accent:#6aa7ff;
-      --accent2:#8bffcf;
-      --line:rgba(255,255,255,0.10);
-      --shadow: 0 12px 30px rgba(0,0,0,0.35);
-      --radius:18px;
-      --max: 980px;
-    }
-
-    /* Light Theme */
-    body.light{
-      --bg:#f7f8fc;
+      --bg:#ffffff;
       --card:#ffffff;
-      --text:#101828;
-      --muted:#475467;
-      --accent:#175cd3;
-      --accent2:#039855;
-      --line:rgba(16,24,40,0.12);
-      --shadow: 0 12px 30px rgba(16,24,40,0.12);
+      --text:#0f172a;
+      --muted:#475569;
+      --line:#e2e8f0;
+      --accent:#2563eb;
+      --shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+      --radius: 16px;
+      --max: 980px;
     }
 
     *{ box-sizing:border-box; }
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue";
-      background: radial-gradient(1200px 800px at 20% 0%, rgba(106,167,255,0.18), transparent 55%),
-                  radial-gradient(900px 600px at 90% 10%, rgba(139,255,207,0.12), transparent 60%),
-                  var(--bg);
-      color:var(--text);
-      line-height:1.6;
-      transition: background .2s ease, color .2s ease;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
     }
 
-    a{ color:var(--accent); text-decoration:none; }
-    a:hover{ text-decoration:underline; }
+    a{ color: var(--accent); text-decoration:none; }
+    a:hover{ text-decoration: underline; }
 
     .wrap{
       max-width: var(--max);
       margin: 0 auto;
-      padding: 34px 18px 60px;
+      padding: 36px 18px 60px;
     }
 
     .topbar{
       display:flex;
-      align-items:center;
       justify-content:space-between;
-      gap:12px;
-      padding: 10px 0 24px;
-      flex-wrap:wrap;
-    }
-
-    .brand{
-      display:flex;
       align-items:center;
-      gap:12px;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-bottom: 24px;
     }
 
-    .avatar{
-      width:44px;
-      height:44px;
-      border-radius:14px;
-      background: linear-gradient(135deg, rgba(106,167,255,0.9), rgba(139,255,207,0.85));
-      box-shadow: var(--shadow);
-    }
-
-    .brand h1{
-      font-size: 18px;
+    .name{
+      font-size: 22px;
+      font-weight: 800;
       margin:0;
       letter-spacing:0.2px;
     }
 
-    .brand p{
-      margin:0;
-      font-size: 13px;
-      color:var(--muted);
+    .subtitle{
+      margin:4px 0 0;
+      color: var(--muted);
+      font-size: 14px;
     }
 
     .nav{
       display:flex;
       flex-wrap:wrap;
       gap:10px;
-      justify-content:flex-end;
       align-items:center;
     }
 
     .pill{
       padding:8px 12px;
       border:1px solid var(--line);
-      background: rgba(255,255,255,0.04);
       border-radius: 999px;
       font-size: 13px;
       color: var(--text);
-      transition: transform .15s ease, background .15s ease;
+      background: #fff;
+      transition: transform .12s ease;
     }
     .pill:hover{
-      background: rgba(255,255,255,0.07);
       transform: translateY(-1px);
       text-decoration:none;
     }
 
-    .toggle{
-      cursor:pointer;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,0.04);
-      padding:8px 12px;
-      border-radius:999px;
-      font-size:13px;
-      font-weight:700;
-      color: var(--text);
-    }
-
     .hero{
-      padding: 24px;
-      border: 1px solid var(--line);
+      border:1px solid var(--line);
       border-radius: var(--radius);
-      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      padding: 22px;
       box-shadow: var(--shadow);
+      background: var(--card);
     }
 
     .hero h2{
-      margin:0 0 8px;
-      font-size: 34px;
-      line-height:1.2;
+      margin:0 0 6px;
+      font-size: 30px;
       letter-spacing:0.2px;
+      line-height: 1.2;
     }
 
-    .hero .role{
-      margin: 0 0 14px;
+    .hero .meta{
+      margin:0 0 14px;
       color: var(--muted);
-      font-size: 15px;
+      font-size: 14px;
     }
 
-    .hero .summary{
-      margin:0 0 18px;
+    .hero p{
+      margin:0 0 16px;
+      max-width: 78ch;
       color: var(--text);
-      max-width: 75ch;
     }
 
     .cta{
       display:flex;
       flex-wrap:wrap;
-      gap:12px;
+      gap:10px;
       margin-top: 10px;
     }
 
     .btn{
       display:inline-flex;
       align-items:center;
-      gap:10px;
+      gap:8px;
       padding: 10px 14px;
       border-radius: 12px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.04);
+      border:1px solid var(--line);
+      background:#fff;
       color: var(--text);
       font-weight: 700;
       font-size: 14px;
-      transition: transform .15s ease, background .15s ease;
+      transition: transform .12s ease;
     }
 
     .btn:hover{
       transform: translateY(-1px);
-      background: rgba(255,255,255,0.08);
       text-decoration:none;
     }
 
     .btn.primary{
-      background: linear-gradient(135deg, rgba(106,167,255,0.95), rgba(139,255,207,0.85));
-      border: none;
-      color: #081022;
+      background: var(--accent);
+      border:1px solid var(--accent);
+      color:#fff;
     }
 
     .grid{
@@ -189,27 +146,30 @@
       margin-top: 18px;
     }
 
-    @media (min-width: 880px){
+    @media (min-width: 900px){
       .grid{
         grid-template-columns: 1.1fr 0.9fr;
       }
     }
 
     .card{
-      padding: 18px 18px;
-      border: 1px solid var(--line);
+      border:1px solid var(--line);
       border-radius: var(--radius);
-      background: rgba(255,255,255,0.03);
-      box-shadow: 0 10px 24px rgba(0,0,0,0.22);
+      padding: 18px;
+      box-shadow: var(--shadow);
+      background: var(--card);
     }
 
-    .card h3{
-      margin:0 0 12px;
+    .section{
+      margin-top: 22px;
+    }
+
+    .section-title{
+      margin: 0 0 12px;
       font-size: 16px;
+      font-weight: 800;
       letter-spacing:0.2px;
     }
-
-    .muted{ color: var(--muted); }
 
     .chips{
       display:flex;
@@ -220,119 +180,63 @@
     .chip{
       padding: 8px 10px;
       border-radius: 999px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.03);
+      border:1px solid var(--line);
       font-size: 13px;
       color: var(--text);
-    }
-
-    .section{
-      margin-top: 22px;
-    }
-
-    .section-title{
-      margin: 0 0 12px;
-      font-size: 18px;
-      letter-spacing:0.2px;
+      background:#fff;
     }
 
     .timeline{
       display:flex;
       flex-direction:column;
-      gap:14px;
+      gap:12px;
     }
 
     .job{
-      padding: 16px;
+      border:1px solid var(--line);
       border-radius: var(--radius);
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.03);
+      padding: 16px;
+      background:#fff;
+      box-shadow: var(--shadow);
     }
 
-    .job .head{
+    .jobhead{
       display:flex;
-      flex-wrap:wrap;
-      align-items:baseline;
       justify-content:space-between;
       gap:10px;
-      margin-bottom: 8px;
+      flex-wrap:wrap;
+      margin-bottom: 6px;
     }
 
-    .job .title{
+    .jobtitle{
       font-weight: 800;
-      font-size: 15px;
       margin:0;
     }
 
-    .job .meta{
-      font-size: 13px;
+    .jobmeta{
+      margin:0;
       color: var(--muted);
-      margin:0;
+      font-size: 13px;
     }
 
-    .job ul{
+    ul{
       margin: 10px 0 0;
       padding-left: 18px;
       color: var(--text);
     }
 
-    /* Projects */
-    .projects{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap:14px;
-    }
-    @media (min-width: 880px){
-      .projects{
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    .project{
-      padding: 16px;
-      border-radius: var(--radius);
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.03);
-    }
-
-    .project h4{
-      margin:0 0 8px;
-      font-size: 15px;
-      letter-spacing:0.2px;
-    }
-
-    .project p{
-      margin:0 0 10px;
-      color: var(--muted);
+    .small{
       font-size: 13px;
-    }
-
-    .project .tags{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-    }
-
-    .tag{
-      font-size: 12px;
-      padding: 6px 8px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.03);
+      color: var(--muted);
     }
 
     .footer{
       margin-top: 28px;
       padding-top: 16px;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-size: 13px;
+      border-top:1px solid var(--line);
       text-align:center;
-    }
-
-    .small{
-      font-size: 13px;
       color: var(--muted);
+      font-size: 13px;
     }
   </style>
 </head>
@@ -340,14 +244,11 @@
 <body>
   <div class="wrap">
 
-    <!-- Top Navigation -->
+    <!-- Header -->
     <div class="topbar">
-      <div class="brand">
-        <div class="avatar" aria-hidden="true"></div>
-        <div>
-          <h1>Kiran Ramgade</h1>
-          <p>Mobile Application Developer • Android • Flutter • Kotlin</p>
-        </div>
+      <div>
+        <h1 class="name">Kiran Ramgade</h1>
+        <p class="subtitle">Mobile Application Developer • Android • Flutter • Kotlin • Pune, India</p>
       </div>
 
       <div class="nav">
@@ -355,285 +256,168 @@
         <a class="pill" href="#projects">Projects</a>
         <a class="pill" href="#experience">Experience</a>
         <a class="pill" href="#education">Education</a>
-        <a class="pill" href="#certifications">Certifications</a>
         <a class="pill" href="#contact">Contact</a>
-        <button class="toggle" onclick="toggleTheme()">🌙 / ☀️</button>
       </div>
     </div>
 
     <!-- Hero -->
     <div class="hero">
-      <h2>Mobile Application Developer</h2>
-      <p class="role">Pune, Maharashtra, India • Android | Android TV | Fire TV | Flutter • Learning Swift (iOS)</p>
+      <h2>Building scalable mobile apps with strong performance & stability.</h2>
+      <p class="meta">
+        3+ years experience • Android, Android TV, Fire TV • Kotlin/Java/Flutter • Learning Swift (iOS)
+      </p>
 
-      <p class="summary">
+      <p>
         Mobile Application Developer with 3+ years of experience building high-performance Android applications and OTT
-        streaming platforms. Proficient in Kotlin, Java, Flutter, and learning Swift for iOS. Expert in MVVM architecture,
-        Jetpack Compose, REST API integration, and Firebase services. Proven track record of optimizing app performance,
-        reducing crashes using monitoring solutions, and delivering scalable production-ready applications for Android,
-        Android TV, and Fire TV.
+        streaming platforms. Skilled in MVVM/Clean Architecture, Jetpack Compose, REST API integration, and Firebase
+        services. Focused on delivering scalable production-ready apps, optimizing performance, and improving stability.
       </p>
 
       <div class="cta" id="contact">
-        <a class="btn primary" href="mailto:ramgadek95@gmail.com">📩 Email Me</a>
-        <a class="btn" href="tel:+918855948697">📞 Call</a>
-        <a class="btn" href="https://linkedin.com/in/kiranramgade" target="_blank" rel="noopener">🔗 LinkedIn</a>
-        <a class="btn" href="https://github.com/" target="_blank" rel="noopener">💻 GitHub</a>
-
-        <!-- Resume Download -->
-        <a class="btn" href="./Kiran_Ramgade_Resume.pdf" download>⬇️ Download Resume</a>
+        <a class="btn primary" href="mailto:ramgadek95@gmail.com">Email</a>
+        <a class="btn" href="https://linkedin.com/in/kiranramgade" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://github.com/kiranramgade12" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="./Kiran_Ramgade_Resume.pdf" download>Download Resume</a>
       </div>
 
-      <p class="small" style="margin-top:12px;">
-        Note: Upload your resume PDF in the same repo with name <b>Kiran_Ramgade_Resume.pdf</b> to make download work.
+      <p class="small" style="margin-top:10px;">
+        Phone: <a href="tel:+918855948697">+91 8855948697</a>
       </p>
     </div>
 
-    <!-- Skills + Highlights -->
-    <div class="grid section" id="skills">
+    <!-- Skills -->
+    <div class="section" id="skills">
+      <h3 class="section-title">Skills</h3>
       <div class="card">
-        <h3>Technical Skills</h3>
         <div class="chips">
           <span class="chip">Kotlin</span>
           <span class="chip">Java</span>
           <span class="chip">Dart</span>
           <span class="chip">Swift (Learning)</span>
-          <span class="chip">Python</span>
-          <span class="chip">SQL</span>
-
           <span class="chip">Android SDK</span>
           <span class="chip">Jetpack Compose</span>
           <span class="chip">Flutter</span>
-          <span class="chip">XML Layouts</span>
-
           <span class="chip">MVVM</span>
           <span class="chip">Clean Architecture</span>
-          <span class="chip">MVI</span>
-          <span class="chip">Repository Pattern</span>
-          <span class="chip">Dependency Injection</span>
-
           <span class="chip">Room</span>
-          <span class="chip">Navigation</span>
-          <span class="chip">LiveData</span>
-          <span class="chip">ViewModel</span>
           <span class="chip">Coroutines</span>
-
           <span class="chip">Retrofit</span>
           <span class="chip">Dagger/Hilt</span>
-          <span class="chip">Glide</span>
-
-          <span class="chip">ExoPlayer</span>
-          <span class="chip">Media3</span>
-          <span class="chip">HLS/DASH</span>
-          <span class="chip">Android TV</span>
-          <span class="chip">Fire TV</span>
-
           <span class="chip">Firebase Crashlytics</span>
           <span class="chip">Firebase Analytics</span>
-          <span class="chip">Firebase Auth</span>
-          <span class="chip">Firestore</span>
-          <span class="chip">GraphQL</span>
-
-          <span class="chip">Git</span>
-          <span class="chip">Android Studio</span>
-          <span class="chip">Xcode</span>
-          <span class="chip">Postman</span>
-          <span class="chip">Charles Proxy</span>
-          <span class="chip">Charles Proxy</span>
+          <span class="chip">ExoPlayer / Media3</span>
+          <span class="chip">HLS / DASH</span>
+          <span class="chip">Android TV</span>
+          <span class="chip">Fire TV</span>
           <span class="chip">CI/CD</span>
-
           <span class="chip">JUnit</span>
           <span class="chip">Espresso</span>
-          <span class="chip">Unit Testing</span>
-          <span class="chip">Performance Profiling</span>
+          <span class="chip">Postman</span>
+          <span class="chip">Git</span>
         </div>
-      </div>
-
-      <div class="card">
-        <h3>Quick Highlights</h3>
-        <ul style="margin:0; padding-left:18px;">
-          <li>Built scalable Android apps serving <b>100K+ active users</b> with <b>4.5+ star rating</b></li>
-          <li>Reduced crash rate by <b>40%</b> using Firebase monitoring & stability improvements</li>
-          <li>Improved load time by <b>30%</b> using Room + Coroutines + architecture optimization</li>
-          <li>Delivered OTT streaming experience for <b>50K+ daily active users</b></li>
-          <li>Achieved <b>80%+ code coverage</b> for critical modules with JUnit & Espresso</li>
-        </ul>
       </div>
     </div>
 
     <!-- Projects -->
     <div class="section" id="projects">
       <h3 class="section-title">Projects</h3>
-
-      <div class="projects">
-        <div class="project">
-          <h4>Android Applications (100K+ Users)</h4>
-          <p>
-            Developed scalable Android apps using Kotlin + Jetpack Compose with MVVM/Clean Architecture,
-            REST APIs and Firebase integration for stability and analytics.
+      <div class="grid">
+        <div class="card">
+          <h4 style="margin:0 0 6px;">Android Apps (100K+ Users)</h4>
+          <p class="small" style="margin:0 0 10px;">
+            Built scalable Android apps with Jetpack Compose + MVVM/Clean Architecture, REST APIs, Room, and Firebase.
           </p>
-          <div class="tags">
-            <span class="tag">Kotlin</span>
-            <span class="tag">Jetpack Compose</span>
-            <span class="tag">MVVM</span>
-            <span class="tag">Firebase</span>
-            <span class="tag">Room</span>
-          </div>
+          <ul>
+            <li>Improved load time by ~30% through optimization</li>
+            <li>Reduced crash rate by ~40% using Crashlytics + fixes</li>
+          </ul>
         </div>
 
-        <div class="project">
-          <h4>OTT Streaming Platform (Android / Android TV / Fire TV)</h4>
-          <p>
-            Built and optimized OTT video playback features using ExoPlayer/Media3 supporting HLS/DASH,
-            adaptive bitrate streaming, buffer optimization, and TV D-pad navigation.
+        <div class="card">
+          <h4 style="margin:0 0 6px;">OTT Streaming (Android / Android TV / Fire TV)</h4>
+          <p class="small" style="margin:0 0 10px;">
+            Developed OTT streaming features using ExoPlayer/Media3 with HLS/DASH playback optimization.
           </p>
-          <div class="tags">
-            <span class="tag">ExoPlayer</span>
-            <span class="tag">Media3</span>
-            <span class="tag">HLS/DASH</span>
-            <span class="tag">Android TV</span>
-            <span class="tag">Fire TV</span>
-          </div>
-        </div>
-
-        <div class="project">
-          <h4>Crash & Performance Monitoring</h4>
-          <p>
-            Integrated Firebase Crashlytics & Analytics and improved stability by reducing crash rates,
-            identifying production issues early, and optimizing app performance.
-          </p>
-          <div class="tags">
-            <span class="tag">Crashlytics</span>
-            <span class="tag">Analytics</span>
-            <span class="tag">Performance</span>
-            <span class="tag">Debugging</span>
-          </div>
-        </div>
-
-        <div class="project">
-          <h4>CI/CD & Code Quality Improvements</h4>
-          <p>
-            Implemented CI/CD pipelines and code review practices to improve deployment frequency,
-            code quality, and release stability.
-          </p>
-          <div class="tags">
-            <span class="tag">CI/CD</span>
-            <span class="tag">Git</span>
-            <span class="tag">Code Reviews</span>
-            <span class="tag">Agile</span>
-          </div>
+          <ul>
+            <li>Adaptive bitrate streaming + buffer improvements</li>
+            <li>TV D-pad navigation & TV-optimized UI</li>
+          </ul>
         </div>
       </div>
 
-      <p class="small" style="margin-top:10px;">
-        Want to add real GitHub project links here? Send me your repo links and I’ll update this section.
-      </p>
     </div>
 
     <!-- Experience -->
     <div class="section" id="experience">
-      <h3 class="section-title">Professional Experience</h3>
+      <h3 class="section-title">Experience</h3>
 
       <div class="timeline">
-
         <div class="job">
-          <div class="head">
-            <p class="title">Mobile Application Developer</p>
-            <p class="meta">Jan 2024 – Present</p>
+          <div class="jobhead">
+            <p class="jobtitle">Mobile Application Developer — Novora Technology Group</p>
+            <p class="jobmeta">Jan 2024 – Present</p>
           </div>
-          <p class="meta">Novora Technology Group • Bengaluru, Karnataka, India</p>
+          <p class="jobmeta">Bengaluru, Karnataka, India</p>
           <ul>
-            <li>Architected and developed scalable Android apps using <b>Kotlin, Jetpack Compose, MVVM/Clean Architecture</b> for <b>100K+ active users</b>.</li>
-            <li>Integrated <b>REST APIs</b> and <b>Firebase</b> (Crashlytics, Analytics, Authentication) leading to <b>40% crash reduction</b>.</li>
-            <li>Optimized performance using <b>Room, Coroutines, LiveData/ViewModel</b>, improving load time by <b>30%</b>.</li>
-            <li>Implemented modern UI patterns with <b>Material Design 3</b>, reducing UI bugs by <b>25%</b>.</li>
-            <li>Collaborated with UI/UX, Backend, QA teams in Agile sprints and delivered <b>15+ feature releases</b>.</li>
-            <li>Established CI/CD and code review practices, improving release quality and deployment frequency.</li>
-            <li>Mentored junior developers in debugging, architecture patterns, and Android best practices.</li>
+            <li>Developed Android apps using Kotlin, Jetpack Compose, MVVM/Clean Architecture.</li>
+            <li>Integrated REST APIs + Firebase (Crashlytics, Analytics, Auth) improving stability.</li>
+            <li>Optimized performance with Room + Coroutines, improving responsiveness and load times.</li>
+            <li>Delivered 15+ feature releases on schedule in Agile sprints.</li>
           </ul>
         </div>
 
         <div class="job">
-          <div class="head">
-            <p class="title">Software Engineer</p>
-            <p class="meta">Jul 2022 – Oct 2023</p>
+          <div class="jobhead">
+            <p class="jobtitle">Software Engineer — yvs.video</p>
+            <p class="jobmeta">Jul 2022 – Oct 2023</p>
           </div>
-          <p class="meta">yvs.video • Hyderabad, Telangana, India</p>
+          <p class="jobmeta">Hyderabad, Telangana, India</p>
           <ul>
-            <li>Developed OTT video streaming features using <b>ExoPlayer/Media3</b> with <b>HLS/DASH</b> playback.</li>
-            <li>Built <b>Android TV & Fire TV</b> apps with TV-optimized UI and D-pad navigation, increasing reach by <b>35%</b>.</li>
-            <li>Implemented adaptive bitrate streaming, buffer management, and offline download improvements.</li>
-            <li>Used Firebase Analytics & Crashlytics to monitor production health, reducing issues by <b>45%</b>.</li>
-            <li>Integrated REST APIs for content management, authentication, and real-time data sync.</li>
-            <li>Practiced TDD with <b>JUnit & Espresso</b>, achieving <b>80%+ coverage</b> for key modules.</li>
+            <li>Built OTT streaming features using ExoPlayer/Media3 supporting HLS/DASH protocols.</li>
+            <li>Developed Android TV & Fire TV apps with D-pad navigation and optimized UI.</li>
+            <li>Improved production quality using Firebase Analytics & Crashlytics monitoring.</li>
+            <li>Practiced TDD with JUnit & Espresso with 80%+ coverage for key modules.</li>
           </ul>
         </div>
 
         <div class="job">
-          <div class="head">
-            <p class="title">Trainee Software Engineer</p>
-            <p class="meta">Jan 2022 – Jun 2022</p>
+          <div class="jobhead">
+            <p class="jobtitle">Trainee Software Engineer — yvs.video</p>
+            <p class="jobmeta">Jan 2022 – Jun 2022</p>
           </div>
-          <p class="meta">yvs.video • Hyderabad, Telangana, India</p>
+          <p class="jobmeta">Hyderabad, Telangana, India</p>
           <ul>
             <li>Trained in Android fundamentals: Activities, Fragments, Services, Broadcast Receivers.</li>
-            <li>Built production-ready features using Kotlin/Java and Android Jetpack under senior guidance.</li>
-            <li>Worked in Agile process with daily standups, sprint planning, and retrospectives.</li>
+            <li>Worked with Kotlin/Java and Jetpack components under senior developer guidance.</li>
+            <li>Participated in Agile ceremonies: standups, sprint planning, retrospectives.</li>
           </ul>
         </div>
-
       </div>
     </div>
 
     <!-- Education -->
     <div class="section" id="education">
       <h3 class="section-title">Education</h3>
-
       <div class="card">
-        <p style="margin:0;"><b>RMD Sinhgad School of Engineering</b> — Pune, Maharashtra, India</p>
-        <p class="muted" style="margin:6px 0 0;">Bachelor of Engineering in Computer Engineering • Aug 2015 – Jun 2020</p>
+        <p style="margin:0;"><b>RMD Sinhgad School of Engineering</b> — Pune, India</p>
+        <p class="small" style="margin:6px 0 0;">B.E. Computer Engineering • Aug 2015 – Jun 2020</p>
 
-        <div style="height:12px;"></div>
+        <div style="height:10px;"></div>
 
-        <p style="margin:0;"><b>Ekalavya Shikshan Santha’s Polytechnic</b> — Pune, Maharashtra, India</p>
-        <p class="muted" style="margin:6px 0 0;">Diploma in Computer Applications • 2012 – 2015</p>
-      </div>
-    </div>
-
-    <!-- Certifications -->
-    <div class="section" id="certifications">
-      <h3 class="section-title">Certifications & Training</h3>
-      <div class="card">
-        <ul style="margin:0; padding-left:18px;">
-          <li>Android Application Development</li>
-          <li>Python Programming</li>
-          <li>Data Analytics for Decision Making</li>
-          <li>Red Hat Linux</li>
-          <li>Competitive Programming: Coding Championship Participant</li>
-        </ul>
+        <p style="margin:0;"><b>Ekalavya Shikshan Santha’s Polytechnic</b> — Pune, India</p>
+        <p class="small" style="margin:6px 0 0;">Diploma in Computer Applications • 2012 – 2015</p>
       </div>
     </div>
 
     <!-- Footer -->
     <div class="footer">
-      © <span id="year"></span> Kiran Ramgade • Built with GitHub Pages
+      © <span id="year"></span> Kiran Ramgade • GitHub Pages Portfolio
     </div>
 
   </div>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
-
-    function toggleTheme(){
-      document.body.classList.toggle("light");
-      localStorage.setItem("theme", document.body.classList.contains("light") ? "light" : "dark");
-    }
-
-    // Load saved theme
-    (function(){
-      const saved = localStorage.getItem("theme");
-      if(saved === "light") document.body.classList.add("light");
-    })();
   </script>
 </body>
 </html>
